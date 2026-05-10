@@ -60,7 +60,7 @@ async function predict() {
 
         // API request
         const response = await fetch(
-            "https://your-backend-name.onrender.com/predict",
+            "http://127.0.0.1:5000/predict",
             {
                 method: "POST",
 
