@@ -2,8 +2,9 @@ async function predict() {
 
     const resultBox = document.getElementById("result");
 
-    resultBox.innerText = "Analyzing health data...";
+    resultBox.innerHTML = "🔍 Analyzing health data...";
 
+    // Get form data
     const data = {
 
         Age: Number(document.getElementById("Age").value),
@@ -36,10 +37,30 @@ async function predict() {
         Insulin: 120
     };
 
+    // Basic validation
+    if (
+        !data.Age ||
+        !data.BMI ||
+        !data.Glucose ||
+        !data.BloodPressure ||
+        !data.HbA1c ||
+        !data.Cholesterol
+    ) {
+
+        resultBox.innerHTML =
+            "⚠️ Please fill all required fields.";
+
+        resultBox.style.background = "#fef3c7";
+        resultBox.style.color = "#92400e";
+
+        return;
+    }
+
     try {
 
+        // API request
         const response = await fetch(
-            "http://127.0.0.1:5000/predict",
+            "https://your-backend-name.onrender.com/predict",
             {
                 method: "POST",
 
@@ -53,7 +74,8 @@ async function predict() {
 
         const result = await response.json();
 
-        if(result.prediction === "Diabetic"){
+        // Diabetic result
+        if (result.prediction === "Diabetic") {
 
             resultBox.innerHTML =
                 "⚠️ High Risk of Diabetes";
@@ -61,7 +83,10 @@ async function predict() {
             resultBox.style.background = "#fee2e2";
             resultBox.style.color = "#991b1b";
 
-        }else{
+        }
+
+        // Non-diabetic result
+        else {
 
             resultBox.innerHTML =
                 "✅ Low Risk of Diabetes";
@@ -70,9 +95,14 @@ async function predict() {
             resultBox.style.color = "#166534";
         }
 
-    } catch (error) {
+    }
 
-        resultBox.innerText =
-            "Error connecting to backend";
+    catch (error) {
+
+        resultBox.innerHTML =
+            "❌ Error connecting to backend";
+
+        resultBox.style.background = "#fee2e2";
+        resultBox.style.color = "#991b1b";
     }
 }
