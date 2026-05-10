@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+import os
 
 from src.predict import predict_diabetes
 
@@ -9,6 +10,7 @@ CORS(app)
 
 @app.route("/")
 def home():
+
     return "Diabetes Prediction API Running"
 
 
@@ -16,13 +18,14 @@ def home():
 def predict():
 
     try:
-        # Receive JSON data from frontend
+
+        # Receive data from frontend
         data = request.get_json()
 
-        # Get prediction result
+        # Get prediction
         result = predict_diabetes(data)
 
-        # Return response
+        # Send response
         return jsonify({
             "prediction": result
         })
@@ -35,4 +38,11 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+
+    # Render dynamic port
+    port = int(os.environ.get("PORT", 5000))
+
+    app.run(
+        host="0.0.0.0",
+        port=port
+    )
