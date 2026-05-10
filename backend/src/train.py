@@ -25,9 +25,10 @@ accuracy = accuracy_score(y_test, y_pred)
 
 print("Accuracy:", accuracy)
 
-# Save model
+# Current directory
 current_dir = os.path.dirname(__file__)
 
+# Model save path
 model_path = os.path.join(
     current_dir,
     "..",
@@ -36,6 +37,6 @@ model_path = os.path.join(
 )
 
 # Save model
-joblib.dump(model, "model/diabetes_model.pkl")
+joblib.dump(model, model_path)
 
 print("Model saved successfully!")
