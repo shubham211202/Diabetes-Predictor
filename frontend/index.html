@@ -4,13 +4,31 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="AI-powered Diabetes Prediction System using Machine Learning">
 
     <title>Diabetes Prediction AI</title>
 
-    <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
+    <link
+        rel="icon"
+        type="image/png"
+        href="favicon.png">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
 </head>
@@ -19,20 +37,24 @@
 
     <div class="container">
 
+        <!-- Left Section -->
         <div class="left-section">
 
             <h1>Diabetes Prediction AI</h1>
 
             <p>
-                Smart healthcare prediction system powered by Machine Learning.
+                Smart healthcare prediction system powered by
+                Machine Learning and Artificial Intelligence.
             </p>
 
+            <!-- Diabetes Illustration -->
             <img
-                src="https://cdn-icons-png.flaticon.com/512/2785/2785819.png"
-                alt="Healthcare">
+                src="https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+                alt="Diabetes AI">
 
         </div>
 
+        <!-- Right Section -->
         <div class="right-section">
 
             <div class="card">
@@ -41,76 +63,172 @@
 
                 <div class="form-grid">
 
+                    <!-- Age -->
                     <div class="input-group">
+
                         <label>Age</label>
-                        <input type="number" id="Age" placeholder="Enter age">
+
+                        <input
+                            type="number"
+                            id="Age"
+                            placeholder="Enter age">
+
                     </div>
 
+                    <!-- Gender -->
                     <div class="input-group">
+
                         <label>Gender</label>
+
                         <select id="Gender">
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
+
+                            <option value="Male">
+                                Male
+                            </option>
+
+                            <option value="Female">
+                                Female
+                            </option>
+
                         </select>
+
                     </div>
 
+                    <!-- BMI -->
                     <div class="input-group">
+
                         <label>BMI</label>
-                        <input type="number" id="BMI" placeholder="Enter BMI">
+
+                        <input
+                            type="number"
+                            id="BMI"
+                            placeholder="Enter BMI">
+
                     </div>
 
+                    <!-- Glucose -->
                     <div class="input-group">
+
                         <label>Glucose Level</label>
-                        <input type="number" id="Glucose" placeholder="Glucose">
+
+                        <input
+                            type="number"
+                            id="Glucose"
+                            placeholder="Glucose Level">
+
                     </div>
 
+                    <!-- Blood Pressure -->
                     <div class="input-group">
+
                         <label>Blood Pressure</label>
-                        <input type="number" id="BloodPressure" placeholder="Blood Pressure">
+
+                        <input
+                            type="number"
+                            id="BloodPressure"
+                            placeholder="Blood Pressure">
+
                     </div>
 
+                    <!-- HbA1c -->
                     <div class="input-group">
+
                         <label>HbA1c</label>
-                        <input type="number" step="0.1" id="HbA1c" placeholder="HbA1c">
+
+                        <input
+                            type="number"
+                            step="0.1"
+                            id="HbA1c"
+                            placeholder="HbA1c">
+
                     </div>
 
+                    <!-- Cholesterol -->
                     <div class="input-group">
+
                         <label>Cholesterol</label>
-                        <input type="number" id="Cholesterol" placeholder="Cholesterol">
+
+                        <input
+                            type="number"
+                            id="Cholesterol"
+                            placeholder="Cholesterol">
+
                     </div>
 
+                    <!-- Family History -->
                     <div class="input-group">
+
                         <label>Family History</label>
+
                         <select id="FamilyHistory">
-                            <option value="0">No</option>
-                            <option value="1">Yes</option>
+
+                            <option value="0">
+                                No
+                            </option>
+
+                            <option value="1">
+                                Yes
+                            </option>
+
                         </select>
+
                     </div>
 
+                    <!-- Physical Activity -->
                     <div class="input-group">
+
                         <label>Physical Activity</label>
+
                         <select id="PhysicalActivity">
-                            <option value="Low">Low</option>
-                            <option value="Moderate">Moderate</option>
-                            <option value="High">High</option>
+
+                            <option value="Low">
+                                Low
+                            </option>
+
+                            <option value="Moderate">
+                                Moderate
+                            </option>
+
+                            <option value="High">
+                                High
+                            </option>
+
                         </select>
+
                     </div>
 
+                    <!-- Smoking -->
                     <div class="input-group">
+
                         <label>Smoking</label>
+
                         <select id="Smoking">
-                            <option value="0">No</option>
-                            <option value="1">Yes</option>
+
+                            <option value="0">
+                                No
+                            </option>
+
+                            <option value="1">
+                                Yes
+                            </option>
+
                         </select>
+
                     </div>
 
                 </div>
 
+                <!-- Predict Button -->
                 <button onclick="predict()">
+
                     Predict Diabetes Risk
+
                 </button>
 
-                <div class="result-box" id="result">
+                <!-- Result Box -->
+                <div
+                    class="result-box"
+                    id="result">
 
                     Your result will appear here
 
@@ -122,6 +240,7 @@
 
     </div>
 
+    <!-- JavaScript -->
     <script src="script.js"></script>
 
 </body>
