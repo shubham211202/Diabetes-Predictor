@@ -36,6 +36,6 @@ model_path = os.path.join(
 )
 
 # Save model
-joblib.dump(model, ".\\backend\\model\\diabetes_model.pkl")
+joblib.dump(model, "model/diabetes_model.pkl")
 
 print("Model saved successfully!")

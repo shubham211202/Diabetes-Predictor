@@ -2,7 +2,7 @@ import numpy as np
 import joblib
 
 # Load trained model
-model = joblib.load(".\\backend\\model\\diabetes_model.pkl")
+model = joblib.load("model/diabetes_model.pkl")
 
 
 def predict_diabetes(data):

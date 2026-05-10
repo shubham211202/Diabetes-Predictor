@@ -14,7 +14,7 @@ def load_data():
         "Diabetes.csv"
     )
 
-    df = pd.read_csv(".\\backend\\data\\diabetes.csv")
+    df = pd.read_csv("data/diabetes.csv")
 
     # Encode Gender
     gender_encoder = LabelEncoder()
